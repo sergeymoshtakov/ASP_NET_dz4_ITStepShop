@@ -1,0 +1,32 @@
+﻿@model Tuple<List<Product>, double>
+
+<h2>Загальне замовлення</h2>
+
+@if (Model.Item1.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ім'я товару</th>
+                <th>Ціна</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Item1)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                </tr>
+            }
+            <tr>
+                <td><strong>Загальна сума:</strong></td>
+                <td>@Model.Item2</td>
+            </tr>
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Кошик порожній.</p>
+}

@@ -1,0 +1,39 @@
+﻿@model ITStepShop.Models.Order
+
+<h2>Видалення замовлення</h2>
+
+<div>
+    <h4>Ви впевнені, що хочете видалити замовлення:</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Ім'я клієнта:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.CustomerName
+        </dd>
+        <dt class="col-sm-2">
+            Адреса:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Address
+        </dd>
+        <dt class="col-sm-2">
+            Електронна пошта:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Email
+        </dd>
+        <dt class="col-sm-2">
+            Телефон:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Phone
+        </dd>
+    </dl>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Підтвердити видалення</button> |
+        <a asp-action="Index">Скасувати</a>
+    </form>
+</div>
